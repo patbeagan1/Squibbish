@@ -38,8 +38,22 @@ class SquibbishParser {
                 "}" -> logicBraceEnd(iterator)
                 "bash" -> logicBash(iterator)
                 "fn" -> logicFunction(iterator)
+                "do" -> logicDo(iterator)
             }
         }
+    }
+
+    private fun logicDo(iterator: Iterator<String>) {
+        var next = iterator.next()
+        var bashString = ""
+        while (next != ";") {
+            if (next == "{"){
+                error("Braces are not allowed in the DO macro.")
+            }
+            bashString += next.wrap()
+            next = iterator.next()
+        }
+        appendCompiled(bashString.wrap())
     }
 
     private fun logicFunction(iterator: Iterator<String>) {
@@ -47,14 +61,14 @@ class SquibbishParser {
         var next = ""
         while (next != "=") {
             if (!Regex("[ a-zA-Z]*").matches(next)) {
-                throw SQUCompilationError()
+                error("Function name does not match regex")
             }
             functionName += next
             next = iterator.next()
         }
         next = iterator.next()
         if (next != "{") {
-            throw SQUCompilationError()
+           error("Function not followed by brace")
         }
         braceStack.push(FUNCTION)
         functionName = functionName.replace(" ", "_")
@@ -64,7 +78,7 @@ class SquibbishParser {
         var counter = 1
         while (next != "|") {
             if (!Regex("[ a-zA-Z]*").matches(next)) {
-                throw SQUCompilationError()
+                error("Function param name does not match regex")
             }
             next.replace(" ", "_")
             appendCompiled("local $next=\"\${$counter}\";".wrap())
@@ -76,18 +90,19 @@ class SquibbishParser {
     private fun logicBash(iterator: Iterator<String>) {
         var next = iterator.next()
         if (next != "{") {
-            throw SQUCompilationError()
+            error("Bash not followed by brace")
         }
         next = iterator.next()
         var bashString = ""
         while (next != "}") {
+            if (next == "{"){
+                error("Braces are not allowed in the bash macro.")
+            }
             bashString += next.wrap()
             next = iterator.next()
         }
         appendCompiled(bashString.wrap())
     }
-
-    class SQUCompilationError : Throwable()
 
     private fun logicEcho(iterator: Iterator<String>) {
         var echoString = ""
@@ -109,20 +124,52 @@ class SquibbishParser {
     }
 
     private fun logicBranch(iterator: Iterator<String>) {
-        val brace = iterator.next()
-        if ("{" == brace) {
-            braceStack.push(BRANCH)
-            logicBranchInner(iterator, previousToken = "")
+        var branchStatement = ""
+        var next = ""
+        while (next != "{") {
+            branchStatement += next
+            next = iterator.next()
         }
+        val iterForMatcher = Regex(" *([^ ]*) *").findAll(branchStatement)
+        if (iterForMatcher.any()) {
+            val values = iterForMatcher.iterator().next().groupValues
+            val switch = values[0]
+            if (switch.isEmpty()) {
+                braceStack.push(BRANCH)
+                logicBranchInner(iterator, previousToken = "")
+            } else {
+                braceStack.push(CASE)
+                appendCompiled("case \"\${$switch}\" in".wrap())
+                logicCaseInner(iterator, previousToken = "")
+            }
+        } else {
+            error("Branch started incorrectly.")
+        }
+    }
+
+    private fun logicCaseInner(iterator: Iterator<String>, previousToken: String) {
+        var condition = previousToken
+        var next = iterator.next()
+        while (next == ";") {
+            next = iterator.next()
+        }
+        while (next != "{") {
+            if (next != ";") {
+                condition += next.wrap()
+            }
+            next = iterator.next()
+        }
+        braceStack.push(CASE_INNER)
+        appendCompiled(condition.wrap() + ")".wrap())
     }
 
     private fun logicBranchInner(iterator: Iterator<String>, previousToken: String) {
         var condition = previousToken
         var next = iterator.next()
-        while (next == "|" || next == ";") {
+        while (next == ";") {
             next = iterator.next()
         }
-        while (next != "|") {
+        while (next != "{") {
             if (next != ";") {
                 condition += next.wrap()
             }
@@ -155,9 +202,9 @@ class SquibbishParser {
         val pop = braceStack.pop()
         when (pop) {
             FOR -> appendCompiled("done;".wrap())
-            BRANCH -> appendCompiled("[ 1 ]; then :; fi;".wrap())
+            BRANCH -> appendCompiled(" 1 ]; then :; fi;".wrap())
             BRANCH_INNER -> {
-                appendCompiled("elif".wrap())
+                appendCompiled("elif [".wrap())
                 var next = iterator.next()
                 if (next == ";") {
                     next = iterator.next()
@@ -169,6 +216,19 @@ class SquibbishParser {
                 }
             }
             FUNCTION -> appendCompiled("};".wrap())
+            CASE -> appendCompiled("esac;".wrap())
+            CASE_INNER -> {
+                appendCompiled(";;".wrap())
+                var next = iterator.next()
+                if (next == ";") {
+                    next = iterator.next()
+                }
+                if (next == "}") {
+                    logicBraceEnd(iterator)
+                } else {
+                    logicCaseInner(iterator, next)
+                }
+            }
             else -> {
                 error("Brace ended without starting.")
             }
@@ -185,7 +245,7 @@ class SquibbishParser {
         showPrint(tokenIteratorFor)
         val iterForMatcher = Regex(" *(.*) *\\.\\.(.*)(\\.\\.)? *(.*) *").findAll(tokenIteratorFor)
 
-        if (iterForMatcher.any() ) {
+        if (iterForMatcher.any()) {
             braceStack.push(FOR)
             val values = iterForMatcher.iterator().next().groupValues
             val start = values[1]
@@ -213,10 +273,13 @@ class SquibbishParser {
     }
 
     enum class BraceType {
-        FOR, BRANCH, BRANCH_INNER, FUNCTION
+        FOR, BRANCH, BRANCH_INNER, FUNCTION, CASE, CASE_INNER
     }
+
+    class SQUCompilationError(s: String) : Throwable(s)
 
     private fun error(s: String) {
         println("Compilation Error: $s")
+        throw SQUCompilationError(s)
     }
 }
