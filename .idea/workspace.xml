@@ -7,13 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce692375-1e3f-45b3-9ed6-8922b8033811" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SquibbishParser.kt" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SquibbishParser.kt" />
       <change beforePath="$PROJECT_DIR$/main/test/com/pbeagan/squibbish/SquibbishParserTest.kt" afterPath="$PROJECT_DIR$/main/test/com/pbeagan/squibbish/SquibbishParserTest.kt" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_jar/main.jar" afterPath="$PROJECT_DIR$/out/artifacts/main_jar/main.jar" />
-      <change beforePath="$PROJECT_DIR$/out/production/main/com/pbeagan/squibbish/SquibbishParser$BraceType.class" afterPath="$PROJECT_DIR$/out/production/main/com/pbeagan/squibbish/SquibbishParser$BraceType.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/main/com/pbeagan/squibbish/SquibbishParser$SQUCompilationError.class" afterPath="$PROJECT_DIR$/out/production/main/com/pbeagan/squibbish/SquibbishParser$SQUCompilationError.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/main/com/pbeagan/squibbish/SquibbishParser.class" afterPath="$PROJECT_DIR$/out/production/main/com/pbeagan/squibbish/SquibbishParser.class" />
+      <change beforePath="$PROJECT_DIR$/out/test/main/SquibbishParserTest.class" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,8 +66,8 @@
       <file leaf-file-name="SquibbishParser.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SquibbishParser.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="27" column="55" lean-forward="false" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
+            <state relative-caret-position="245">
+              <caret line="135" column="30" lean-forward="false" selection-start-line="135" selection-start-column="30" selection-end-line="135" selection-end-column="30" />
               <folding>
                 <element signature="e#31#106#0" expanded="true" />
               </folding>
@@ -82,8 +78,8 @@
       <file leaf-file-name="SquibbishParserTest.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/test/com/pbeagan/squibbish/SquibbishParserTest.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-781">
-              <caret line="140" column="38" lean-forward="false" selection-start-line="140" selection-start-column="38" selection-end-line="140" selection-end-column="38" />
+            <state relative-caret-position="121">
+              <caret line="185" column="176" lean-forward="false" selection-start-line="185" selection-start-column="176" selection-end-line="185" selection-end-column="176" />
               <folding>
                 <element signature="e#0#210#0" expanded="true" />
               </folding>
@@ -140,6 +136,16 @@
         <option value="JUnit5 Test Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>elif [ 1 ]; then :; fi;</find>
+      <find>`;</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>fi;</replace>
+      <replace>`;</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -361,14 +367,14 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="SquibbishParserTest.func2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SquibbishParserTest.forLoop7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="main" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.pbeagan.squibbish" />
       <option name="MAIN_CLASS_NAME" value="SquibbishParserTest" />
-      <option name="METHOD_NAME" value="func2" />
+      <option name="METHOD_NAME" value="forLoop7" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -381,14 +387,14 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="SquibbishParserTest.func3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SquibbishParserTest.forLoop8" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="main" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.pbeagan.squibbish" />
       <option name="MAIN_CLASS_NAME" value="SquibbishParserTest" />
-      <option name="METHOD_NAME" value="func3" />
+      <option name="METHOD_NAME" value="forLoop8" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -483,18 +489,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.SquibbishParserTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.SquibbishParserTest.func2" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.SquibbishParserTest.func3" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.SquibbishParserTest.case1" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.SquibbishParserTest.let1" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.SquibbishParserTest.case1" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.SquibbishParserTest.let1" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.SquibbishParserTest.forLoop7" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.SquibbishParserTest.forLoop8" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.SquibbishParserTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SquibbishParserTest.let1" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.SquibbishParserTest.case1" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.SquibbishParserTest.func3" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.SquibbishParserTest.func2" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SquibbishParserTest.forLoop8" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.SquibbishParserTest.forLoop7" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.SquibbishParserTest.let1" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.SquibbishParserTest.case1" />
       </list>
     </recent_temporary>
   </component>
@@ -518,35 +524,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SquibbishParserTest - 2018.03.10 at 15h 33m 09s.xml">
+    <history-entry file="SquibbishParserTest - 2018.03.10 at 16h 20m 54s.xml">
       <configuration name="SquibbishParserTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SquibbishParserTest - 2018.03.10 at 15h 37m 16s.xml">
+    <history-entry file="SquibbishParserTest - 2018.03.10 at 16h 26m 58s.xml">
       <configuration name="SquibbishParserTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SquibbishParserTest - 2018.03.10 at 15h 37m 50s.xml">
+    <history-entry file="SquibbishParserTest - 2018.03.10 at 16h 28m 01s.xml">
       <configuration name="SquibbishParserTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SquibbishParserTest_case1 - 2018.03.10 at 14h 17m 27s.xml">
-      <configuration name="SquibbishParserTest.case1" configurationId="JUnit" />
+    <history-entry file="SquibbishParserTest - 2018.03.10 at 16h 28m 47s.xml">
+      <configuration name="SquibbishParserTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SquibbishParserTest_case1 - 2018.03.10 at 14h 17m 53s.xml">
-      <configuration name="SquibbishParserTest.case1" configurationId="JUnit" />
+    <history-entry file="SquibbishParserTest - 2018.03.10 at 16h 42m 18s.xml">
+      <configuration name="SquibbishParserTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SquibbishParserTest_case1 - 2018.03.10 at 14h 22m 56s.xml">
-      <configuration name="SquibbishParserTest.case1" configurationId="JUnit" />
+    <history-entry file="SquibbishParserTest - 2018.03.10 at 16h 43m 40s.xml">
+      <configuration name="SquibbishParserTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SquibbishParserTest_case1 - 2018.03.10 at 14h 36m 59s.xml">
-      <configuration name="SquibbishParserTest.case1" configurationId="JUnit" />
+    <history-entry file="SquibbishParserTest_forLoop8 - 2018.03.10 at 16h 22m 05s.xml">
+      <configuration name="SquibbishParserTest.forLoop8" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SquibbishParserTest_case1 - 2018.03.10 at 14h 38m 17s.xml">
-      <configuration name="SquibbishParserTest.case1" configurationId="JUnit" />
+    <history-entry file="SquibbishParserTest_forLoop8 - 2018.03.10 at 16h 23m 27s.xml">
+      <configuration name="SquibbishParserTest.forLoop8" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SquibbishParserTest_let1 - 2018.03.10 at 15h 29m 15s.xml">
-      <configuration name="SquibbishParserTest.let1" configurationId="JUnit" />
+    <history-entry file="SquibbishParserTest_forLoop8 - 2018.03.10 at 16h 24m 56s.xml">
+      <configuration name="SquibbishParserTest.forLoop8" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SquibbishParserTest_let1 - 2018.03.10 at 15h 30m 00s.xml">
-      <configuration name="SquibbishParserTest.let1" configurationId="JUnit" />
+    <history-entry file="SquibbishParserTest_forLoop8 - 2018.03.10 at 16h 26m 21s.xml">
+      <configuration name="SquibbishParserTest.forLoop8" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -609,7 +615,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SquibbishParser.kt</url>
-          <line>60</line>
+          <line>61</line>
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
@@ -703,8 +709,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SquibbishParser.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="27" column="55" lean-forward="false" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
+        <state relative-caret-position="245">
+          <caret line="135" column="30" lean-forward="false" selection-start-line="135" selection-start-column="30" selection-end-line="135" selection-end-column="30" />
           <folding>
             <element signature="e#31#106#0" expanded="true" />
           </folding>
@@ -713,8 +719,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/test/com/pbeagan/squibbish/SquibbishParserTest.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-781">
-          <caret line="140" column="38" lean-forward="false" selection-start-line="140" selection-start-column="38" selection-end-line="140" selection-end-column="38" />
+        <state relative-caret-position="121">
+          <caret line="185" column="176" lean-forward="false" selection-start-line="185" selection-start-column="176" selection-end-line="185" selection-end-column="176" />
           <folding>
             <element signature="e#0#210#0" expanded="true" />
           </folding>

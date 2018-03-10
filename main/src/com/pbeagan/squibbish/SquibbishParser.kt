@@ -24,6 +24,7 @@ class SquibbishParser {
 
         compiledString = compiledString
                 .replace(Regex(" +"), " ")
+                .replace(";;", "  ;;")
                 .replace(" ;", ";")
                 .replace("elif [ 1 ]; then :; fi;", "fi;")
         println(compiledString)
@@ -80,10 +81,10 @@ class SquibbishParser {
         var functionName = ""
         var next = ""
         while (next != "=") {
-            if (!Regex("[ a-zA-Z]*").matches(next)) {
+            if (!Regex("[_a-zA-Z]*").matches(next)) {
                 error("Function name does not match regex")
             }
-            functionName += next
+            functionName += "$next "
             next = iterator.next()
         }
         next = iterator.next()
@@ -91,8 +92,7 @@ class SquibbishParser {
             error("Function not followed by brace")
         }
         braceStack.push(FUNCTION)
-        functionName = functionName.replace(" ", "_")
-        appendCompiled("$functionName () {")
+        appendCompiled("$functionName () {".wrap())
 
         next = iterator.next()
         var counter = 1
@@ -133,7 +133,7 @@ class SquibbishParser {
                 exitChar = next
                 break
             } else {
-                echoString += next
+                echoString += "$next "
             }
         }
 
@@ -259,20 +259,21 @@ class SquibbishParser {
         var tokenIteratorFor = ""
         var next = ""
         while (next != "{") {
-            tokenIteratorFor += next
+            tokenIteratorFor += "$next "
             next = iterator.next()
         }
         showPrint(tokenIteratorFor)
-        val iterForMatcher = Regex(" *(.*) *\\.\\.(.*)(\\.\\.)? *(.*) *").findAll(tokenIteratorFor)
+        val iterForMatcher = Regex(" *([^. ]*) *\\.\\. *([^. ]*) *(\\.\\.)? *([^. ]*) *([^. ]*)?").findAll(tokenIteratorFor)
 
         if (iterForMatcher.any()) {
             braceStack.push(FOR)
             val values = iterForMatcher.iterator().next().groupValues
+            showPrint(values.toString())
             val start = values[1]
-            val iter = values[2]
-            val end = values[4]
-
-            appendCompiled("for it in `seq $start $iter $end`; do".wrap())
+            val iter = values[4]
+            val end = values[2]
+            val alias = if (values[5].isNullOrEmpty()) "it" else values[5]
+            appendCompiled("for $alias in `seq $start $iter $end`; do".wrap())
             applyLogic(iterator)
         } else {
             error("Compilation error on 'for'.")
