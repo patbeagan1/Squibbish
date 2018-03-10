@@ -6,11 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce692375-1e3f-45b3-9ed6-8922b8033811" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SquibbishParser.kt" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SquibbishParser.kt" />
-      <change beforePath="$PROJECT_DIR$/main/test/com/pbeagan/squibbish/SquibbishParserTest.kt" afterPath="$PROJECT_DIR$/main/test/com/pbeagan/squibbish/SquibbishParserTest.kt" />
-      <change beforePath="$PROJECT_DIR$/out/test/main/SquibbishParserTest.class" afterPath="" />
-    </list>
+    <list default="true" id="ce692375-1e3f-45b3-9ed6-8922b8033811" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
