@@ -22,7 +22,10 @@ class SquibbishParser {
         val iterator = parseable.split(Regex("(\\s)+")).iterator()
         applyLogic(iterator)
 
-        compiledString = compiledString.replace(Regex(" +"), " ")
+        compiledString = compiledString
+                .replace(Regex(" +"), " ")
+                .replace(" ;", ";")
+                .replace("elif [ 1 ]; then :; fi;", "fi;")
         println(compiledString)
         return compiledString
     }
@@ -39,7 +42,24 @@ class SquibbishParser {
                 "bash" -> logicBash(iterator)
                 "fn" -> logicFunction(iterator)
                 "do" -> logicDo(iterator)
+                "let" -> logicLet(iterator)
             }
+        }
+    }
+
+    private fun logicLet(iterator: Iterator<String>) {
+        var next = iterator.next()
+        appendCompiled(" $next")
+        next = iterator.next()
+        if (next != "=") {
+            error("Variable assignment done incorrectly")
+        }
+        appendCompiled("=")
+        next = iterator.next()
+        appendCompiled(next + ";".wrap())
+        next = iterator.next()
+        if (next != ";") {
+            error("Variable assignment done incorrectly")
         }
     }
 
@@ -47,13 +67,13 @@ class SquibbishParser {
         var next = iterator.next()
         var bashString = ""
         while (next != ";") {
-            if (next == "{"){
+            if (next == "{") {
                 error("Braces are not allowed in the DO macro.")
             }
             bashString += next.wrap()
             next = iterator.next()
         }
-        appendCompiled(bashString.wrap())
+        appendCompiled(bashString.wrap() + ";".wrap())
     }
 
     private fun logicFunction(iterator: Iterator<String>) {
@@ -68,7 +88,7 @@ class SquibbishParser {
         }
         next = iterator.next()
         if (next != "{") {
-           error("Function not followed by brace")
+            error("Function not followed by brace")
         }
         braceStack.push(FUNCTION)
         functionName = functionName.replace(" ", "_")
@@ -95,7 +115,7 @@ class SquibbishParser {
         next = iterator.next()
         var bashString = ""
         while (next != "}") {
-            if (next == "{"){
+            if (next == "{") {
                 error("Braces are not allowed in the bash macro.")
             }
             bashString += next.wrap()
