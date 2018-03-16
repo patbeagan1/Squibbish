@@ -144,12 +144,7 @@ class SquibbishParser {
     }
 
     private fun logicBranch(iterator: Iterator<String>) {
-        var branchStatement = ""
-        var next = ""
-        while (next != "{") {
-            branchStatement += next
-            next = iterator.next()
-        }
+        val branchStatement = getStringUntilTerminator(iterator, "{","")
         val iterForMatcher = Regex(" *([^ ]*) *").findAll(branchStatement)
         if (iterForMatcher.any()) {
             val values = iterForMatcher.iterator().next().groupValues
@@ -291,6 +286,16 @@ class SquibbishParser {
 
     private fun String.wrap(): String {
         return " $this "
+    }
+
+    private fun getStringUntilTerminator(iterator: Iterator<String>, terminator: String, seperator: String): String {
+        var branchStatement = ""
+        var next = ""
+        while (next != terminator) {
+            branchStatement += next + seperator
+            next = iterator.next()
+        }
+        return branchStatement
     }
 
     enum class BraceType {
