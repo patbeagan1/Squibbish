@@ -66,13 +66,3 @@ fn all_the_tests = { input |
   echo
   do hello_world
 }
-fn myfunction = { a | 
-    for 1..5 { 
-        br { $a = $it  {
-                echo $a 
-             } 1 {
-		echo false $it
-             }
-        }
-    }
-}

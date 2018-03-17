@@ -41,7 +41,7 @@ private fun readFromFile(fileName: String, input: String): String {
 }
 
 private fun writeToFile(output: String) {
-    val outputStream: OutputStream = File("out.txt").outputStream()
+    val outputStream: OutputStream = File("out.sh").outputStream()
     outputStream.bufferedWriter().use { it.write(output) }
 }
 

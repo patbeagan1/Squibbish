@@ -2,10 +2,12 @@ package com.pbeagan.squibbish
 
 import com.pbeagan.squibbish.SquibbishParser.BraceType.*
 import java.util.*
+import kotlin.collections.HashMap
 
 class SquibbishParser {
     var braceStack: Stack<BraceType> = Stack()
     private var compiledString: String = ""
+    val variables: HashMap<String, String> = HashMap()
 
     fun parse(input: String): String {
         val parseable = input
@@ -49,19 +51,24 @@ class SquibbishParser {
     }
 
     private fun logicLet(iterator: Iterator<String>) {
-        var next = iterator.next()
-        appendCompiled(" $next")
-        next = iterator.next()
-        if (next != "=") {
+        val variableName = iterator.next()
+        val separator = iterator.next()
+        if (separator != "=") {
             error("Variable assignment done incorrectly")
         }
-        appendCompiled("=")
-        next = iterator.next()
-        appendCompiled(next + ";".wrap())
-        next = iterator.next()
-        if (next != ";") {
+        val value = iterator.next()
+        val terminator = iterator.next()
+        if (terminator != ";") {
             error("Variable assignment done incorrectly")
         }
+
+        if (!variables.containsKey(variableName)) {
+            println("variable '$variableName' initialized with value '$value'")
+        }
+        variables[variableName] = value
+
+        appendCompiled(" $variableName=")
+        appendCompiled(value + ";".wrap())
     }
 
     private fun logicDo(iterator: Iterator<String>) {
@@ -78,16 +85,8 @@ class SquibbishParser {
     }
 
     private fun logicFunction(iterator: Iterator<String>) {
-        var functionName = ""
-        var next = ""
-        while (next != "=") {
-            if (!Regex("[_a-zA-Z]*").matches(next)) {
-                error("Function name does not match regex")
-            }
-            functionName += "$next "
-            next = iterator.next()
-        }
-        next = iterator.next()
+        val functionName = iterator.getStringUntilTerminator("=", " ")
+        var next = iterator.next()
         if (next != "{") {
             error("Function not followed by brace")
         }
@@ -144,7 +143,7 @@ class SquibbishParser {
     }
 
     private fun logicBranch(iterator: Iterator<String>) {
-        val branchStatement = getStringUntilTerminator(iterator, "{","")
+        val branchStatement = iterator.getStringUntilTerminator("{", "")
         val iterForMatcher = Regex(" *([^ ]*) *").findAll(branchStatement)
         if (iterForMatcher.any()) {
             val values = iterForMatcher.iterator().next().groupValues
@@ -207,12 +206,6 @@ class SquibbishParser {
         }
     }
 
-    var pipeBlock = false
-    private fun getAndChangePipeBlock(): Boolean {
-        pipeBlock = !pipeBlock
-        return pipeBlock
-    }
-
     private fun logicBraceEnd(iterator: Iterator<String>) {
         val pop = braceStack.pop()
         when (pop) {
@@ -251,12 +244,7 @@ class SquibbishParser {
     }
 
     private fun logicFor(iterator: Iterator<String>) {
-        var tokenIteratorFor = ""
-        var next = ""
-        while (next != "{") {
-            tokenIteratorFor += "$next "
-            next = iterator.next()
-        }
+        val tokenIteratorFor = iterator.getStringUntilTerminator("{", " ")
         showPrint(tokenIteratorFor)
         val iterForMatcher = Regex(" *([^. ]*) *\\.\\. *([^. ]*) *(\\.\\.)? *([^. ]*) *([^. ]*)?").findAll(tokenIteratorFor)
 
@@ -288,12 +276,12 @@ class SquibbishParser {
         return " $this "
     }
 
-    private fun getStringUntilTerminator(iterator: Iterator<String>, terminator: String, seperator: String): String {
+    private fun Iterator<String>.getStringUntilTerminator(terminator: String, seperator: String): String {
         var branchStatement = ""
         var next = ""
         while (next != terminator) {
             branchStatement += next + seperator
-            next = iterator.next()
+            next = this.next()
         }
         return branchStatement
     }
