@@ -1,4 +1,4 @@
-
+```
 pbeagan@Patricks-MacBook-Pro:~/IdeaProjects/squibbish/out/artifacts/main_jar 14:21:31 (master) 6 $ cat sq.txt
 fn all_the_tests = { input |
 
@@ -213,3 +213,4 @@ hello
 
 hello world
 pbeagan@Patricks-MacBook-Pro:~/IdeaProjects/squibbish/out/artifacts/main_jar 14:18:54 (master) 6 $
+```
