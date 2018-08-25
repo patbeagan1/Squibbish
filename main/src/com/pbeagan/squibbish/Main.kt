@@ -1,13 +1,13 @@
 package com.pbeagan.squibbish
 
 import java.io.File
-import java.io.InputStream
-import java.io.OutputStream
 import kotlin.system.exitProcess
 
 fun main(args: Array<String>) {
-    if (args.size > 2) {
+    if (args.size > 2 || args.isEmpty()) {
         println("""
+This program takes either 1 or 2 arguments, you supplied (${args.size})
+
 Usage:
     squibbish "echo hello"
     squibbish -f "myfilename.txt"
@@ -20,11 +20,11 @@ Usage:
     var writeToFile = false
     when (input) {
         "-f" -> {
-            input = readFromFile(fileName, input)
+            input = readFromFile(fileName)
         }
         "-fo" -> {
             writeToFile = true
-            input = readFromFile(fileName, input)
+            input = readFromFile(fileName)
         }
     }
     val parse = squibbishParser.parse(input)
@@ -33,15 +33,15 @@ Usage:
     }
 }
 
-private fun readFromFile(fileName: String, input: String): String {
-    var input1 = input
-    val inputStream: InputStream = File(fileName).inputStream()
-    input1 = inputStream.bufferedReader().use { it.readText() }
-    return input1
-}
+private fun readFromFile(fileName: String): String = File(fileName)
+        .inputStream()
+        .bufferedReader()
+        .use { it.readText() }
 
 private fun writeToFile(output: String) {
-    val outputStream: OutputStream = File("out.sh").outputStream()
-    outputStream.bufferedWriter().use { it.write(output) }
+    File("out.sh")
+            .outputStream()
+            .bufferedWriter()
+            .use { it.write(output) }
 }
 

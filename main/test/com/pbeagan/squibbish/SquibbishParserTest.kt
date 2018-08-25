@@ -224,4 +224,53 @@ fn myfunction = { a b c |
                     """.trimMargin()).trim()
         )
     }
+
+    @Test
+    fun echoWithComment() {
+        assertEquals(
+                "echo hello world;",
+                parser.parse("""
+                    echo hello world // I am a comment
+                    """.trimMargin()).trim()
+        )
+    }
+
+    @Test
+    fun math() {
+        assertEquals(
+                "\$(( 1 + 1 ));",
+                parser.parse("""
+                    math { 1 + 1 }
+                    """.trimMargin()).trim()
+        )
+    }
+
+    @Test
+    fun fahrenheitToCelsius() {
+        val s = "$"
+        val actual = parser.parse("""
+fn fahrenheit_to_celsius = { input type |
+
+    fn convertToC = { input |
+        let ret = math { ${s}input - 32 * 4/9 }
+        echo ${s}ret
+    }
+
+    fn convertToF = { input |
+        let ret = math{ ${s}input + 32 / 4/9}
+        echo ${s}ret
+    }
+
+    fn main = { input type |
+        br type {
+            "F" { convertToC input }
+            "C" { convertToF input }
+        }
+    }
+    main ${s}input ${s}type
+}
+        """.trimIndent())
+        val expected = ""
+        assertEquals(expected, actual)
+    }
 }
