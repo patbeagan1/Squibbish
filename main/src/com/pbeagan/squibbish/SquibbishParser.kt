@@ -31,15 +31,16 @@ class SquibbishParser : SQUPrinter, LogicRoot {
         return compiledString
     }
 
-    private val logicDo = LogicDo(this)
     private val logicFunction = LogicFunction(this)
-    private val logicComment = LogicComment(this)
+    private val logicFunctionScoped = LogicFunctionScoped(this)
+    private val logicComment = LogicComment()
     private val logicBranchInner = LogicBranchInner(this)
     private val logicCaseInner = LogicCaseInner(this)
+    private val logicFor = LogicFor(this, this)
     private val logicBraceEnd = LogicBraceEnd(this, logicBranchInner, logicCaseInner)
     private val logicBranch = LogicBranch(this, logicBranchInner, logicCaseInner)
-    private val logicFor = LogicFor(this, this)
     private val logicEcho = LogicEcho(this, logicComment, logicBraceEnd)
+    private val logicDo = LogicDo(this, logicBraceEnd)
     private val logicBash = LogicBash(this)
     private val logicMath = LogicMath(this)
     private val logicLet = LogicLet(this, logicMath)
@@ -54,10 +55,14 @@ class SquibbishParser : SQUPrinter, LogicRoot {
                 "echo" -> logicEcho.logicEcho(iterator, braceStack)
                 "}" -> logicBraceEnd.logicBraceEnd(iterator, braceStack)
                 "bash" -> logicBash.logicBash(iterator)
-                "math" -> logicMath.performWith(iterator)
+                "math" -> logicMath.performWithAndPrint(iterator)
                 "fn" -> logicFunction.logicFunction(iterator, braceStack)
-                "do" -> logicDo.logicDo(iterator)
+                "fns" -> logicFunctionScoped.logicFunctionScoped(iterator, braceStack)
+                "do" -> logicDo.logicDo(iterator, braceStack)
                 "let" -> logicLet.logicLet(iterator)
+                NEWLINE -> Noop because "Newlines are acceptable."
+                "" -> Noop because "The end of the file can be an empty string."
+                else -> throw SQUCompilationError("Unexpected token '$token' on line ${LineCounter.count}")
             }
         }
     }
@@ -72,7 +77,13 @@ class SquibbishParser : SQUPrinter, LogicRoot {
     }
 
     enum class BraceType {
-        FOR, BRANCH, BRANCH_INNER, FUNCTION, CASE, CASE_INNER
+        FOR,
+        BRANCH,
+        BRANCH_INNER,
+        FUNCTION,
+        CASE,
+        CASE_INNER,
+        FUNCTION_SCOPED
     }
 
     companion object {

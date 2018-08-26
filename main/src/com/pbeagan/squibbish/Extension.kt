@@ -15,11 +15,6 @@ fun Iterator<String>.getStringUntilTerminator(terminator: String, seperator: Str
     }
     return branchStatement
 }
-
-object LineCounter {
-    var count = 0
-    fun increment() = Unit.also { count += 1 }
-}
 //
 //    class Conditional(var shouldContinue: Boolean)
 //

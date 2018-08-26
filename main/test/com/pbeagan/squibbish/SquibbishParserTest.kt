@@ -238,7 +238,7 @@ fn myfunction = { a b c |
     @Test
     fun math() {
         assertEquals(
-                "\$(( 1 + 1 ));",
+                "\$( echo \" 1 + 1 \" | bc )",
                 parser.parse("""
                     math { 1 + 1 }
                     """.trimMargin()).trim()
@@ -252,25 +252,66 @@ fn myfunction = { a b c |
 fn fahrenheit_to_celsius = { input type |
 
     fn convertToC = { input |
-        let ret = math { ${s}input - 32 * 4/9 }
+        let ret = math { ( ${s}input - 32 ) / 1.8  }
         echo ${s}ret
     }
 
     fn convertToF = { input |
-        let ret = math{ ${s}input + 32 / 4/9}
+        let ret = math{ ( ${s}input * 1.8 ) + 32}
         echo ${s}ret
     }
 
     fn main = { input type |
         br type {
-            "F" { convertToC input }
-            "C" { convertToF input }
+            "F" { do convertToC ${s}input }
+            "C" { do convertToF ${s}input }
         }
     }
-    main ${s}input ${s}type
+    do main ${s}input ${s}type
 }
-        """.trimIndent())
-        val expected = ""
+        """.trimIndent().trimMargin().trim())
+        val expected = """ fahrenheit_to_celsius () { local input="$s{1}"; local type="$s{2}"; convertToC () { local input="$s{1}"; ret=$s( echo " ( ${s}input - 32 ) / 1.8 " | bc ); echo ${s}ret; }; convertToF () { local input="$s{1}"; ret=${'$'}( echo " ( ${s}input * 1.8 ) + 32 " | bc ); echo ${s}ret; }; main () { local input="$s{1}"; local type="$s{2}"; case "$s{type}" in "F" ) convertToC ${s}input;  ;; "C" ) convertToF ${s}input;  ;; esac; }; main ${s}input ${s}type; }; """
         assertEquals(expected, actual)
+    }
+
+    @Test
+    fun nestedFunction() {
+        assertEquals(
+                "outer () { inner () { echo Hello inner world\\!; a=10; }; echo Hell outer workd\\!; }; inner; outer; echo \$a;",
+                parser.parse("""
+                   fn outer = {|
+                        fn inner = {|
+                            echo Hello inner world\!
+                            let a = 10
+                        }
+                        echo Hell outer workd\!
+                   }
+                   do inner;
+                   do outer;
+                   echo ${"$"}a
+                    """.trimMargin()).trim()
+        )
+    }
+
+    @Test
+    fun nestedFunctionScoped() {
+        assertEquals(
+                "myfunction () { outer () ( inner () { echo Hello inner world\\!; a=10; }; echo Hell outer workd\\!; ); inner; outer; echo \$a; }; myfunction;",
+                parser.parse("""
+fn myfunction = {|
+    fns outer = {|
+        fn inner = {|
+            echo Hello inner world\!
+            let a = 10
+        }
+        echo Hell outer workd\!
+    }
+    do inner;
+    do outer;
+    echo ${"$"}a
+}
+do myfunction
+                    """.trimMargin()).trim()
+        )
     }
 }

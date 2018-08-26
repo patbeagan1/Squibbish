@@ -1,10 +1,10 @@
 package com.pbeagan.squibbish
 
-class LogicComment(private val printer: SQUPrinter) {
+class LogicComment {
      fun logicComment(iterator: Iterator<String>) {
          while (iterator.hasNext()) {
              val next = iterator.next()
-             if (next == ";") {
+             if (next.isTerminator()) {
                  break
              }
          }

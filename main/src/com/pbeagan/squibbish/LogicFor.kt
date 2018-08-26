@@ -19,7 +19,7 @@ class LogicFor(private val printer: SQUPrinter, private val logicRoot: LogicRoot
             printer.appendCompiled("for $alias in `seq $start $iter $end`; do".wrap())
             logicRoot.applyLogic(iterator)
         } else {
-            error("Compilation error on 'for'.")
+            throw SQUCompilationError("Compilation error on 'for'.")
         }
     }
 }

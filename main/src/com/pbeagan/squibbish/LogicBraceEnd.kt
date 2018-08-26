@@ -26,6 +26,7 @@ class LogicBraceEnd(
                 }
             }
             FUNCTION -> printer.appendCompiled("};".wrap())
+            FUNCTION_SCOPED -> printer.appendCompiled(");".wrap())
             CASE -> printer.appendCompiled("esac;".wrap())
             CASE_INNER -> {
                 printer.appendCompiled(";;".wrap())
