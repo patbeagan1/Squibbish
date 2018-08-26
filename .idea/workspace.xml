@@ -7,35 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce692375-1e3f-45b3-9ed6-8922b8033811" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/farenheitToCelcius.sqb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/Extension.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicBash.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicBraceEnd.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicBranch.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicBranchInner.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicCaseInner.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicComment.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicDo.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicEcho.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicFor.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicFunction.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicLet.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicMath.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicRoot.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SQUCompilationError.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SQUPrinter.kt" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/Main.kt" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/Main.kt" />
-      <change beforePath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SquibbishParser.kt" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SquibbishParser.kt" />
-      <change beforePath="$PROJECT_DIR$/main/test/com/pbeagan/squibbish/SquibbishParserTest.kt" afterPath="$PROJECT_DIR$/main/test/com/pbeagan/squibbish/SquibbishParserTest.kt" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_jar/main.jar" afterPath="$PROJECT_DIR$/out/artifacts/main_jar/main.jar" />
-      <change beforePath="$PROJECT_DIR$/out/production/main/META-INF/main.kotlin_module" afterPath="$PROJECT_DIR$/out/production/main/META-INF/main.kotlin_module" />
-      <change beforePath="$PROJECT_DIR$/out/production/main/com/pbeagan/squibbish/MainKt.class" afterPath="$PROJECT_DIR$/out/production/main/com/pbeagan/squibbish/MainKt.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/main/com/pbeagan/squibbish/SquibbishParser$BraceType.class" afterPath="$PROJECT_DIR$/out/production/main/com/pbeagan/squibbish/SquibbishParser$BraceType.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/main/com/pbeagan/squibbish/SquibbishParser$SQUCompilationError.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/main/com/pbeagan/squibbish/SquibbishParser$WhenMappings.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/main/com/pbeagan/squibbish/SquibbishParser.class" afterPath="$PROJECT_DIR$/out/production/main/com/pbeagan/squibbish/SquibbishParser.class" />
-      <change beforePath="$PROJECT_DIR$/out/test/main/SquibbishParserTest.class" afterPath="$PROJECT_DIR$/out/test/main/SquibbishParserTest.class" />
+      <change beforePath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicMath.kt" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicMath.kt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LogicMath.kt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LogicMath.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicMath.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+            <state relative-caret-position="210">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -107,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LogicBranchInner.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LogicBranchInner.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicBranchInner.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+            <state relative-caret-position="360">
+              <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -217,8 +189,8 @@
         <option value="$PROJECT_DIR$/farenheitToCelcius.sqb" />
         <option value="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SquibbishParser.kt" />
         <option value="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicLet.kt" />
-        <option value="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicMath.kt" />
         <option value="$PROJECT_DIR$/main/test/com/pbeagan/squibbish/SquibbishParserTest.kt" />
+        <option value="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicMath.kt" />
       </list>
     </option>
   </component>
@@ -1040,14 +1012,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicMath.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/test/com/pbeagan/squibbish/SquibbishParserTest.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
@@ -1058,8 +1022,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicBranchInner.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        <state relative-caret-position="360">
+          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicMath.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -12,6 +12,7 @@ class LogicMath(private val printer: SQUPrinter) {
             if (next == "{") {
                 throw  SQUCompilationError("Braces are not allowed in the bash macro.")
             }
+
             bashString += next.wrap()
             next = iterator.next()
         }

@@ -1,0 +1,20 @@
+
+fn fahrenheit_to_celsius = { input type |
+
+    fn convertToC = { input |
+        let ret = math { $input - 32 * 4/9 }
+        echo $ret
+    }
+
+    fn convertToF = { input |
+        let ret = (input + 32 / 4/9)
+        echo $ret
+    }
+
+    fn main = { input type |
+        br (type) {
+            "F" -> convertToC input
+            "C" -> convertToF input
+        }
+    }
+}
