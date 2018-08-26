@@ -4,7 +4,7 @@ class LogicMath(private val printer: SQUPrinter) {
     fun performWith(iterator: Iterator<String>): String {
         var next = iterator.next()
         if (next != "{") {
-            error("Bash not followed by brace")
+            throw  SQUCompilationError("Bash not followed by brace")
         }
         next = iterator.next()
         var bashString = "$(("

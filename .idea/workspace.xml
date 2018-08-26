@@ -7,6 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce692375-1e3f-45b3-9ed6-8922b8033811" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/main_jar/farenheitToCelcius.sqb" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/main_jar/runFahrenheit.sh" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicMath.kt" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicMath.kt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
