@@ -23,11 +23,17 @@ class LogicLet(
         }
 
         if (!variables.containsKey(variableName)) {
-            println("variable '$variableName' initialized with value '$value'")
+            println("$TAG # variable '$variableName' initialized with value = '$value'")
+        } else {
+            println("$TAG # variable '$variableName' REASSIGNED with value = '$value'")
         }
         variables[variableName] = value
 
         printer.appendCompiled(" $variableName=")
         printer.appendCompiled(value + ";".wrap())
+    }
+
+    companion object {
+        val TAG: String = LogicLet::class.java.simpleName
     }
 }

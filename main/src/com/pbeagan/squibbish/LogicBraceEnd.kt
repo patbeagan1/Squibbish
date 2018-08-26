@@ -41,7 +41,7 @@ class LogicBraceEnd(
                 }
             }
             else -> {
-                error("Brace ended without starting.")
+                throw SQUCompilationError("Brace ended without starting.")
             }
         }
     }

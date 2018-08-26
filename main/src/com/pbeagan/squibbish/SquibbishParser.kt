@@ -87,6 +87,6 @@ class SquibbishParser : SQUPrinter, LogicRoot {
     }
 
     companion object {
-        const val NEWLINE = "NEWLINE"
+        const val NEWLINE = "NEWLINE_7846897456873652"
     }
 }

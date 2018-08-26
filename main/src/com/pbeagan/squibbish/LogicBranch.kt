@@ -18,7 +18,7 @@ class LogicBranch(private val printer: SQUPrinter, val logicBranchInner: LogicBr
                 logicCaseInner.logicCaseInner(iterator, previousToken = "", braceStack = braceStack)
             }
         } else {
-            error("Branch started incorrectly.")
+            throw SQUCompilationError("Branch started incorrectly.")
         }
     }
 }

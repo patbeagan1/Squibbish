@@ -16,7 +16,7 @@ class LogicFunctionScoped(private val printer: SQUPrinter) {
         var counter = 1
         while (next != "|") {
             if (!Regex("[ a-zA-Z]*").matches(next)) {
-                error("Function param name does not match regex")
+                throw SQUCompilationError("Function param name does not match regex")
             }
             next.replace(" ", "_")
             printer.appendCompiled("local $next=\"\${$counter}\";".wrap())

@@ -1,6 +1,6 @@
 package com.pbeagan.squibbish
 
 interface SQUPrinter {
-    fun appendCompiled(string: String)
+    fun appendCompiled(s: String)
     fun showPrint(toPrint: String)
 }

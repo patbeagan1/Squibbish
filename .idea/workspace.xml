@@ -7,22 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce692375-1e3f-45b3-9ed6-8922b8033811" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LineCounter.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicFunctionScoped.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/Noop.kt" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/Extension.kt" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/Extension.kt" />
-      <change beforePath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicBraceEnd.kt" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicBraceEnd.kt" />
-      <change beforePath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicComment.kt" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicComment.kt" />
-      <change beforePath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicDo.kt" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicDo.kt" />
-      <change beforePath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicFor.kt" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicFor.kt" />
-      <change beforePath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicFunction.kt" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicFunction.kt" />
-      <change beforePath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicMath.kt" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicMath.kt" />
+      <change beforePath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicLet.kt" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicLet.kt" />
+      <change beforePath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SQUPrinter.kt" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SQUPrinter.kt" />
       <change beforePath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SquibbishParser.kt" afterPath="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SquibbishParser.kt" />
-      <change beforePath="$PROJECT_DIR$/main/test/com/pbeagan/squibbish/SquibbishParserTest.kt" afterPath="$PROJECT_DIR$/main/test/com/pbeagan/squibbish/SquibbishParserTest.kt" />
-      <change beforePath="$PROJECT_DIR$/out/production/main/com/pbeagan/squibbish/SquibbishParser$BraceType.class" afterPath="$PROJECT_DIR$/out/production/main/com/pbeagan/squibbish/SquibbishParser$BraceType.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/main/com/pbeagan/squibbish/SquibbishParser.class" afterPath="$PROJECT_DIR$/out/production/main/com/pbeagan/squibbish/SquibbishParser.class" />
-      <change beforePath="$PROJECT_DIR$/out/test/main/SquibbishParserTest.class" afterPath="$PROJECT_DIR$/out/test/main/SquibbishParserTest.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,8 +24,28 @@
       <file leaf-file-name="SquibbishParser.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SquibbishParser.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="57" column="52" lean-forward="true" selection-start-line="57" selection-start-column="52" selection-end-line="57" selection-end-column="52" />
+            <state relative-caret-position="140">
+              <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SQUPrinter.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SQUPrinter.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LogicLet.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicLet.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="36" column="24" lean-forward="false" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -74,27 +81,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Extension.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/Extension.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Noop.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/Noop.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SquibbishParserTest.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SquibbishParserTest.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/test/com/pbeagan/squibbish/SquibbishParserTest.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="142">
@@ -156,6 +143,7 @@
       <find>error</find>
       <find>br (</find>
       <find>$</find>
+      <find>initialized</find>
     </findStrings>
     <replaceStrings>
       <replace>fi;</replace>
@@ -188,7 +176,6 @@
         <option value="$PROJECT_DIR$/main/src/META-INF/MANIFEST.MF" />
         <option value="$PROJECT_DIR$/main/test/com/pbeagan/squibbish/SquibbishParserTest.java" />
         <option value="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/Main.kt" />
-        <option value="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SQUPrinter.kt" />
         <option value="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicBash.kt" />
         <option value="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicRoot.kt" />
         <option value="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicBranchInner.kt" />
@@ -197,7 +184,6 @@
         <option value="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicEcho.kt" />
         <option value="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SQUCompilationError.kt" />
         <option value="$PROJECT_DIR$/farenheitToCelcius.sqb" />
-        <option value="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicLet.kt" />
         <option value="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicFor.kt" />
         <option value="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicComment.kt" />
         <option value="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/Extension.kt" />
@@ -208,8 +194,10 @@
         <option value="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicBraceEnd.kt" />
         <option value="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicFunction.kt" />
         <option value="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicDo.kt" />
-        <option value="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SquibbishParser.kt" />
         <option value="$PROJECT_DIR$/main/test/com/pbeagan/squibbish/SquibbishParserTest.kt" />
+        <option value="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SquibbishParser.kt" />
+        <option value="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicLet.kt" />
+        <option value="$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SQUPrinter.kt" />
       </list>
     </option>
   </component>
@@ -564,13 +552,22 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SquibbishParserTest - 2018.08.26 at 17h 44m 41s.xml">
-      <configuration name="SquibbishParserTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SquibbishParserTest - 2018.08.26 at 17h 49m 11s.xml">
       <configuration name="SquibbishParserTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="SquibbishParserTest - 2018.08.26 at 17h 52m 51s.xml">
+      <configuration name="SquibbishParserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SquibbishParserTest - 2018.08.26 at 17h 53m 21s.xml">
+      <configuration name="SquibbishParserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SquibbishParserTest - 2018.08.26 at 17h 54m 38s.xml">
+      <configuration name="SquibbishParserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SquibbishParserTest - 2018.08.26 at 17h 55m 17s.xml">
+      <configuration name="SquibbishParserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SquibbishParserTest - 2018.08.26 at 17h 57m 23s.xml">
       <configuration name="SquibbishParserTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="SquibbishParserTest_math - 2018.08.26 at 17h 45m 26s.xml">
@@ -582,17 +579,8 @@
     <history-entry file="SquibbishParserTest_math - 2018.08.26 at 17h 48m 05s.xml">
       <configuration name="SquibbishParserTest.math" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SquibbishParserTest_nestedFunctionScoped - 2018.08.26 at 17h 41m 27s.xml">
-      <configuration name="SquibbishParserTest.nestedFunctionScoped" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SquibbishParserTest_nestedFunctionScoped - 2018.08.26 at 17h 41m 56s.xml">
-      <configuration name="SquibbishParserTest.nestedFunctionScoped" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SquibbishParserTest_nestedFunctionScoped - 2018.08.26 at 17h 42m 10s.xml">
-      <configuration name="SquibbishParserTest.nestedFunctionScoped" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SquibbishParserTest_nestedFunctionScoped - 2018.08.26 at 17h 43m 18s.xml">
-      <configuration name="SquibbishParserTest.nestedFunctionScoped" configurationId="JUnit" />
+    <history-entry file="SquibbishParserTest_math - 2018.08.26 at 17h 54m 42s.xml">
+      <configuration name="SquibbishParserTest.math" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -601,15 +589,15 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.325887" sideWeight="0.43580338" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.325887" sideWeight="0.44167277" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26675427" sideWeight="0.5583272" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.325887" sideWeight="0.56419665" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.325887" sideWeight="0.5583272" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26675427" sideWeight="0.45047688" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26675427" sideWeight="0.4475422" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2567865" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -654,12 +642,6 @@
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SquibbishParser.kt</url>
-          <line>64</line>
-          <properties />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicDo.kt</url>
           <line>18</line>
           <properties />
@@ -671,26 +653,8 @@
           <properties />
           <option name="timeStamp" value="17" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SquibbishParser.kt</url>
-          <line>49</line>
-          <properties />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SquibbishParser.kt</url>
-          <line>50</line>
-          <properties />
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SquibbishParser.kt</url>
-          <line>57</line>
-          <properties />
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="21" />
+      <option name="time" value="22" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -934,14 +898,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SQUPrinter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -962,14 +918,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicLet.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1086,14 +1034,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SquibbishParser.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="57" column="52" lean-forward="true" selection-start-line="57" selection-start-column="52" selection-end-line="57" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicMath.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1106,6 +1046,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
           <caret line="298" column="158" lean-forward="true" selection-start-line="298" selection-start-column="158" selection-end-line="298" selection-end-column="158" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/LogicLet.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="24" lean-forward="false" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SquibbishParser.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/src/com/pbeagan/squibbish/SQUPrinter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
           <folding />
         </state>
       </provider>
