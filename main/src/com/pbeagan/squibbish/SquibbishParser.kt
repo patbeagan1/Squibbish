@@ -2,7 +2,7 @@ package com.pbeagan.squibbish
 
 import java.util.*
 
-class SquibbishParser : SQUPrinter, LogicRoot {
+class SquibbishParser : SQBPrinter, LogicRoot {
     var braceStack: Stack<BraceType> = Stack()
     private var compiledString: String = ""
 
@@ -62,7 +62,7 @@ class SquibbishParser : SQUPrinter, LogicRoot {
                 "let" -> logicLet.logicLet(iterator)
                 NEWLINE -> Noop because "Newlines are acceptable."
                 "" -> Noop because "The end of the file can be an empty string."
-                else -> throw SQUCompilationError("Unexpected token '$token' on line ${LineCounter.count}")
+                else -> throw SQBCompilationError("Unexpected token '$token' on line ${LineCounter.count}")
             }
         }
     }

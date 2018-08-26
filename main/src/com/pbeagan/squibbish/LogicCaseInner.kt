@@ -2,7 +2,7 @@ package com.pbeagan.squibbish
 
 import java.util.*
 
-class LogicCaseInner(private val printer: SQUPrinter) {
+class LogicCaseInner(private val printer: SQBPrinter) {
     fun logicCaseInner(iterator: Iterator<String>, previousToken: String, braceStack: Stack<SquibbishParser.BraceType>) {
         var condition = previousToken
         var next = iterator.next()

@@ -2,12 +2,12 @@ package com.pbeagan.squibbish
 
 import java.util.*
 
-class LogicFunction(private val printer: SQUPrinter) {
+class LogicFunction(private val printer: SQBPrinter) {
      fun logicFunction(iterator: Iterator<String>, braceStack: Stack<SquibbishParser.BraceType>) {
         val functionName = iterator.getStringUntilTerminator("=", " ")
         var next = iterator.next()
         if (next != "{") {
-            throw SQUCompilationError("Function not followed by brace")
+            throw SQBCompilationError("Function not followed by brace")
         }
         braceStack.push(SquibbishParser.BraceType.FUNCTION)
         printer.appendCompiled("$functionName () {".wrap())
@@ -16,7 +16,7 @@ class LogicFunction(private val printer: SQUPrinter) {
         var counter = 1
         while (next != "|") {
             if (!Regex("[ a-zA-Z]*").matches(next)) {
-                throw SQUCompilationError("Function param name does not match regex. Did you include the pipe? '|'")
+                throw SQBCompilationError("Function param name does not match regex. Did you include the pipe? '|'")
             }
             next.replace(" ", "_")
             printer.appendCompiled("local $next=\"\${$counter}\";".wrap())

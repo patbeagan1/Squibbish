@@ -4,7 +4,7 @@ import com.pbeagan.squibbish.SquibbishParser.BraceType.*
 import java.util.*
 
 class LogicBraceEnd(
-        private val printer: SQUPrinter,
+        private val printer: SQBPrinter,
         private val logicBranchInner: LogicBranchInner,
         private val logicCaseInner: LogicCaseInner
 ) {
@@ -41,7 +41,7 @@ class LogicBraceEnd(
                 }
             }
             else -> {
-                throw SQUCompilationError("Brace ended without starting.")
+                throw SQBCompilationError("Brace ended without starting.")
             }
         }
     }

@@ -2,7 +2,7 @@ package com.pbeagan.squibbish
 
 import java.util.*
 
-class LogicFor(private val printer: SQUPrinter, private val logicRoot: LogicRoot) {
+class LogicFor(private val printer: SQBPrinter, private val logicRoot: LogicRoot) {
     fun logicFor(iterator: Iterator<String>, braceStack: Stack<SquibbishParser.BraceType>) {
         val tokenIteratorFor = iterator.getStringUntilTerminator("{", " ")
         printer.showPrint(tokenIteratorFor)
@@ -19,7 +19,7 @@ class LogicFor(private val printer: SQUPrinter, private val logicRoot: LogicRoot
             printer.appendCompiled("for $alias in `seq $start $iter $end`; do".wrap())
             logicRoot.applyLogic(iterator)
         } else {
-            throw SQUCompilationError("Compilation error on 'for'.")
+            throw SQBCompilationError("Compilation error on 'for'.")
         }
     }
 }

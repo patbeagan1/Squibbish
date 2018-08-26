@@ -2,7 +2,7 @@ package com.pbeagan.squibbish
 
 import java.util.*
 
-class LogicBranch(private val printer: SQUPrinter, val logicBranchInner: LogicBranchInner, val logicCaseInner: LogicCaseInner) {
+class LogicBranch(private val printer: SQBPrinter, val logicBranchInner: LogicBranchInner, val logicCaseInner: LogicCaseInner) {
     fun logicBranch(iterator: Iterator<String>, braceStack: Stack<SquibbishParser.BraceType>) {
         val branchStatement = iterator.getStringUntilTerminator("{", "")
         val iterForMatcher = Regex(" *([^ ]*) *").findAll(branchStatement)
@@ -18,7 +18,7 @@ class LogicBranch(private val printer: SQUPrinter, val logicBranchInner: LogicBr
                 logicCaseInner.logicCaseInner(iterator, previousToken = "", braceStack = braceStack)
             }
         } else {
-            throw SQUCompilationError("Branch started incorrectly.")
+            throw SQBCompilationError("Branch started incorrectly.")
         }
     }
 }

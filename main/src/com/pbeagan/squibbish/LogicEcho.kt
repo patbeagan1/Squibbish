@@ -3,7 +3,7 @@ package com.pbeagan.squibbish
 import java.util.*
 
 class LogicEcho(
-        private val printer: SQUPrinter,
+        private val printer: SQBPrinter,
         private val logicComment: LogicComment,
         private val logicBraceEnd: LogicBraceEnd
 ) {

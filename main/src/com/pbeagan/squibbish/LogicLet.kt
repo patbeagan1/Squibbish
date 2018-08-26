@@ -1,7 +1,7 @@
 package com.pbeagan.squibbish
 
 class LogicLet(
-        val printer: SQUPrinter,
+        val printer: SQBPrinter,
         private val logicMath: LogicMath
 ) {
     private val variables: HashMap<String, String> = HashMap()
@@ -10,7 +10,7 @@ class LogicLet(
         val variableName = iterator.next()
         val separator = iterator.next()
         if (separator != "=") {
-            throw SQUCompilationError("Variable assignment done incorrectly")
+            throw SQBCompilationError("Variable assignment done incorrectly")
         }
         var value = iterator.next()
         if (value == "math") {
@@ -18,7 +18,7 @@ class LogicLet(
         } else {
             val terminator = iterator.next()
             if (!terminator.isTerminator()) {
-                throw SQUCompilationError("Variable assignment done incorrectly: $terminator")
+                throw SQBCompilationError("Variable assignment done incorrectly: $terminator")
             }
         }
 
