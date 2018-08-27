@@ -314,4 +314,75 @@ do myfunction
                     """.trimMargin()).trim()
         )
     }
+
+    @Test fun firstProg(){
+        assertEquals("",parser.parse("fn all_the_tests = { input |\n" +
+                "\n" +
+                "  echo hello \$input\\!\n" +
+                "  fn hello_world = { a | echo hello world; }\n" +
+                "\n" +
+                "\n" +
+                "  fn printAndDo = { a |\n" +
+                "    echo \$a\n" +
+                "    do \$a\n" +
+                "  }\n" +
+                "  do printAndDo hello_world\n" +
+                "\n" +
+                "  fn count_toten = {|\n" +
+                "    for 0..10 {\n" +
+                "      echo \$it\n" +
+                "    }\n" +
+                "  }\n" +
+                "\n" +
+                "  fn count_toten_by_two = {|\n" +
+                "    for 0..10..2 {\n" +
+                "      echo \$it\n" +
+                "    }\n" +
+                "  }\n" +
+                "  do count_toten_by_two\n" +
+                "\n" +
+                "  fn count_toten_by_two_with_varname = {|\n" +
+                "    for 0..10..2 each {\n" +
+                "      echo \$each\n" +
+                "    }\n" +
+                "  }\n" +
+                "  do count_toten_by_two_with_varname\n" +
+                "\n" +
+                "  fn sayhelloifone = { argument |\n" +
+                "    branch argument {\n" +
+                "      1 { echo hello }\n" +
+                "      * {\n" +
+                "        echo didnt understand the argument.\n" +
+                "        fn sayhelloiftwo = { argument |\n" +
+                "          br argument {\n" +
+                "            2 { echo hello }\n" +
+                "            * { echo Dont understand the argument. }\n" +
+                "          }\n" +
+                "        }\n" +
+                "        do sayhelloiftwo \"\$argument\"\n" +
+                "        do sayhelloiftwo \"1\"\n" +
+                "        do sayhelloiftwo \"2\"\n" +
+                "        echo this is from inside of the loop.\n" +
+                "        echo yes // This is a comment.\n" +
+                "        for 1..5 {\n" +
+                "          echo hello\$it\n" +
+                "        }\n" +
+                "      }\n" +
+                "    }\n" +
+                "  }\n" +
+                "\n" +
+                "  fn testing_let = {|\n" +
+                "    let a = 10\n" +
+                "    echo \$a\n" +
+                "\n" +
+                "  }\n" +
+                "\n" +
+                "  do testing_let; echo; do sayhelloifone 2\n" +
+                "  echo\n" +
+                "  do sayhelloifone 1\n" +
+                "  do count_toten 1\n" +
+                "  echo\n" +
+                "  do hello_world\n" +
+                "}\n"))
+    }
 }

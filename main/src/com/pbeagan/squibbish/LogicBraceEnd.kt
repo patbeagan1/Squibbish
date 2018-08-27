@@ -9,6 +9,7 @@ class LogicBraceEnd(
         private val logicCaseInner: LogicCaseInner
 ) {
     fun logicBraceEnd(iterator: Iterator<String>, braceStack: Stack<SquibbishParser.BraceType>) {
+        printer.showPrint(braceStack.size.toString() + braceStack.peek().name)
         val pop = braceStack.pop()
         when (pop) {
             FOR -> printer.appendCompiled("done;".wrap())
